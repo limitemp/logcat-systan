@@ -1,0 +1,43 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+name: Android Logcat
+scopeName: logcat.adb
+uuid: 9FD5B61C-C642-4743-9FF2-7D1BE612CC7A
+
+patterns:
+- match: '^([\d\- :.]*)(E)\/(.*)\( *(\d+)\): (.*)'
+  captures:
+    '1': {name: keyword.other.control.adb.timestamp}
+    '2': {name: invalid.illegal.adb}
+    '3': {name: entity.name.function}
+    '4': {name: keyword.other.control.adb}
+    '5': {name: invalid.illegal.adb}
+
+- match: '^([\d\- :.]*)(D)\/(.*)\( *(\d+)\): (.*)'
+  captures:
+    '1': {name: keyword.other.control.adb.timestamp}
+    '2': {name: comment.adb}
+    '3': {name: entity.name.function}
+    '4': {name: keyword.other.control.adb}
+    '5': {name: comment.adb}
+
+- match: '^([\d\- :.]*)(W)\/(.*)\( *(\d+)\): (.*)'
+  captures:
+    '1': {name: keyword.other.control.adb.timestamp}
+    '2': {name: keyword.adb}
+    '3': {name: entity.name.function}
+    '4': {name: keyword.other.control.adb}
+    '5': {name: keyword.adb}
+
+- match: '^([\d\- :.]*)(I)\/(.*)\( *(\d+)\): (.*)'
+  captures:
+    '1': {name: keyword.other.control.adb.timestamp}
+    '2': {name: entity.name.filename.adb}
+    '3': {name: entity.name.function}
+    '4': {name: keyword.other.control.adb}
+    '5': {name: entity.name.filename.adb}
+
+- match: '^([\d\- :.]*)(.)\/(.*)\( *(\d+)\): (.*)'
+  captures:
+    '1': {name: keyword.other.control.adb.timestamp}
+    '3': {name: entity.name.function}
+    '4': {name: constant.other.adb}
